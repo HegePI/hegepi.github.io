@@ -16,7 +16,7 @@ const config: StorybookConfig = {
 		options: {}
 	},
 	async viteFinal(config, { configType }) {
-		const { test, ...rest } = config;
+		const { ...rest } = config;
 		return mergeConfig(rest, {
 			resolve: {
 				alias: {
