@@ -15,7 +15,7 @@ const config: StorybookConfig = {
 		name: '@storybook/sveltekit',
 		options: {}
 	},
-	async viteFinal(config, { configType }) {
+	async viteFinal(config) {
 		const { ...rest } = config;
 		return mergeConfig(rest, {
 			resolve: {
