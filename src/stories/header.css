@@ -1,0 +1,13 @@
+.homepage-header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #333;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    display: flex;
+}

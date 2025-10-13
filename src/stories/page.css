@@ -1,0 +1,36 @@
+.homepage-page {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-items: left;
+    margin: 0;
+}
+
+@media (min-width:768px) {
+    .homepage-page {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+
+.homepage-page h1 {
+    color: #333;
+}
+
+.homepage-page p {
+    color: #777;
+}
+
+.homepage-page a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.homepage-page a:hover {
+    text-decoration: underline;
+}
+
+.homepage-page h2 {
+    color: #555;
+    margin-top: 30px;
+}
