@@ -1,10 +1,9 @@
 <script lang="ts">
-	import './../stories/page.css';
-
 	import { resolve } from '$app/paths';
+	import Page from '$lib/components/Page.svelte';
 </script>
 
-<div class="homepage-page">
+<Page>
 	<article>
 		<section>
 			<h1>Welcome to my portfolio!</h1>
@@ -26,4 +25,4 @@
 			<p>In the education page are listed notable highlights about my education.</p>
 		</section>
 	</article>
-</div>
+</Page>

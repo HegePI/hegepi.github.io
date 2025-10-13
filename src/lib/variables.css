@@ -1,0 +1,19 @@
+/* Light mode (default) */
+:root {
+	--background-color: #fff;
+	--text-color: #213547;
+	--header-background-color: #f8f9fa;
+	--header-text-color: #333;
+	--footer-background-color: #f8f9fa;
+	--footer-text-color: #666;
+}
+
+/* Dark mode */
+.dark {
+	--background-color: #121212;
+	--text-color: #fff;
+	--header-background-color: #1a1a1a;
+	--header-text-color: #fff;
+	--footer-background-color: #1a1a1a;
+	--footer-text-color: #fff;
+}

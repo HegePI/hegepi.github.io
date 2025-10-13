@@ -1,10 +1,14 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+	import DarkModeSwitch from '../lib/components/DarkModeSwitch.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	let { children } = $props();
 
-	import './../stories/header.css';
-	import './../stories/footer.css';
+	import '$lib/variables.css';
+	import '$lib/themes.css';
+	import '$lib/global.css';
 </script>
 
 <svelte:head>
@@ -12,11 +16,12 @@
 </svelte:head>
 
 <main>
-	<header class="homepage-header">
-		<h1>Homepage</h1>
-	</header>
+	<Header>
+		<p>Homepage</p>
+		<DarkModeSwitch />
+	</Header>
 	{@render children?.()}
-	<footer class="homepage-footer">
+	<Footer>
 		<p>Contact me</p>
-	</footer>
+	</Footer>
 </main>
