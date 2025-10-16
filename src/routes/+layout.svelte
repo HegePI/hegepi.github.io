@@ -16,12 +16,16 @@
 </svelte:head>
 
 <main>
-	<Header>
-		<p>Homepage</p>
-		<DarkModeSwitch />
-	</Header>
+	<Header />
+
 	{@render children?.()}
 	<Footer>
 		<p>Contact me</p>
 	</Footer>
 </main>
+
+<style>
+	p {
+		padding: 0.5rem;
+	}
+</style>
