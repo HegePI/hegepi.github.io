@@ -1,28 +1,51 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
-	import { writable } from 'svelte/store';
+	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 
-	const pathnames = writable<string[]>([]);
+	let {
+		separator = '/',
+		homeLabel = 'Home',
+		formatLabel = (segment: string) =>
+			segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' ')
+	} = $props();
 
-	onMount(() => {
-		return page.subscribe((p) => {
-			pathnames.set(p.url.pathname.split('/').filter(Boolean));
+	const items = $derived(() => {
+		const path = page.url.pathname;
+		const segments = path.split('/').filter(Boolean);
+
+		const breadcrumbs: Array<{ label: string; href: string; isLast: boolean }> = [
+			{ label: homeLabel, href: '/', isLast: segments.length === 0 }
+		];
+
+		let currentPath = '';
+		segments.forEach((segment, index) => {
+			currentPath += `/${segment}`;
+			breadcrumbs.push({
+				label: formatLabel(segment),
+				href: currentPath,
+				isLast: index === segments.length - 1
+			});
 		});
+
+		return breadcrumbs;
 	});
 </script>
 
-<nav aria-label="breadcrumb">
+<nav aria-label="Breadcrumb">
 	<ol class="breadcrumbs">
-		<li class="breadcrumb-item">
-			<a href="/">Home</a>
-		</li>
-		{#each $pathnames as segment, i}
+		{#each items() as item, index (index)}
 			<li class="breadcrumb-item">
-				{#if i === $pathnames.length - 1}
-					{segment}
+				{#if item.href && !item.isLast}
+					<a href={resolve(item.href)}>
+						{item.label}
+					</a>
 				{:else}
-					<a href={`/${$pathnames.slice(0, i + 1).join('/')}`}>{segment}</a>
+					<span class="current">
+						{item.label}
+					</span>
+				{/if}
+				{#if index < items().length - 1}
+					<span class="separator" aria-hidden="true">{separator}</span>
 				{/if}
 			</li>
 		{/each}
@@ -35,24 +58,35 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
 	}
 
 	.breadcrumb-item {
-		text-transform: capitalize;
-	}
-
-	.breadcrumb-item + .breadcrumb-item::before {
-		content: '>';
-		margin: 0 0.5rem;
-		color: var(--text-color);
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 
 	a {
+		color: #0066cc;
 		text-decoration: none;
-		color: inherit;
+		transition: color 0.2s;
 	}
 
 	a:hover {
 		text-decoration: underline;
+		color: #0052a3;
+	}
+
+	.current {
+		color: #333;
+		font-weight: 500;
+	}
+
+	.separator {
+		color: #999;
+		user-select: none;
 	}
 </style>

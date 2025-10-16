@@ -1,6 +1,5 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-	import DarkModeSwitch from '../lib/components/DarkModeSwitch.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
