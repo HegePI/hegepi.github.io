@@ -24,5 +24,10 @@
 			<h2><a href={resolve('/education')}>Education</a></h2>
 			<p>In the education page are listed notable highlights about my education.</p>
 		</section>
+
+		<section>
+			<h2><a href={resolve('/hobbies')}>Hobbies</a></h2>
+			<p>In the hobbies page are listed some of my hobbies.</p>
+		</section>
 	</article>
 </Page>

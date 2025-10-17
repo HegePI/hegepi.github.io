@@ -1,3 +1,9 @@
-<h1>Education</h1>
+<script lang="ts">
+	import Page from '$lib/components/Page.svelte';
+</script>
 
-<p>Masters degree in computer science</p>
+<Page>
+	<h1>Education</h1>
+
+	<p>Masters degree in computer science</p>
+</Page>

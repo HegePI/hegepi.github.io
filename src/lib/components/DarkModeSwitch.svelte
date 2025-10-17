@@ -1,27 +1,13 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
-	let isDarkMode: boolean | null = null;
-
-	onMount(() => {
-		const storedTheme = localStorage.getItem('theme');
-		if (storedTheme) {
-			isDarkMode = storedTheme === 'dark';
-		} else {
-			isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-		}
-		document.documentElement.classList.toggle('dark', isDarkMode);
-	});
+	import { theme } from '$lib/stores/theme';
 
 	function toggleDarkMode() {
-		isDarkMode = !isDarkMode;
-		document.documentElement.classList.toggle('dark', isDarkMode);
-		localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+		theme.update((current) => (current === 'dark' ? 'light' : 'dark'));
 	}
 </script>
 
 <label class="switch">
-	<input type="checkbox" on:change={toggleDarkMode} checked={isDarkMode} />
+	<input type="checkbox" on:change={toggleDarkMode} checked={$theme === 'dark'} />
 	<span class="slider round"></span>
 </label>
 
