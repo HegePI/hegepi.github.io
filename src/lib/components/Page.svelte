@@ -15,7 +15,7 @@
 
 <main>
 	{#if $theme === 'light'}
-		<div class="homepage-left-column" transition:fade={{ duration: 500 }}>
+		<div class="homepage-left-column" transition:fade={{ duration: 1000 }}>
 			<img src={smilingEmoji} alt="Smiling emoji" class="light-theme-image" />
 		</div>
 	{/if}
@@ -23,7 +23,7 @@
 		{@render children?.()}
 	</div>
 	{#if $theme === 'dark'}
-		<div class="homepage-right-column" transition:fade={{ duration: 500 }}>
+		<div class="homepage-right-column" transition:fade={{ duration: 1000 }}>
 			<img
 				src={smilingEmojiWithSunglasses}
 				alt="Smiling emoji with sunglasses"
