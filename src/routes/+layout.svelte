@@ -38,7 +38,7 @@
 
 	{@render children?.()}
 	<Footer>
-		<p>Contact me</p>
+		<p>Contact me @ ...</p>
 	</Footer>
 </main>
 

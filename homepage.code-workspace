@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "Homepage",
+			"path": "."
+		}
+	],
+	"extensions": {
+		"recommendations": ["svelte.svelte-vscode"]
+	}
+}
