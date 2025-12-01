@@ -11,9 +11,6 @@
 
 	let { children } = $props();
 
-	// eslint-disable-next-line
-	export const prerender = true;
-
 	onMount(() => {
 		const storedTheme = localStorage.getItem('theme');
 		if (storedTheme) {
