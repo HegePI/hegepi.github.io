@@ -6,6 +6,11 @@
 	--header-text-color: #333;
 	--footer-background-color: #f8f9fa;
 	--footer-text-color: #666;
+	--font-family: 'Noto Sans Mono', monospace;
+}
+
+body {
+	font-family: var(--font-family);
 }
 
 /* Dark mode */

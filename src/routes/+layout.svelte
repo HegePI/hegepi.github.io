@@ -3,7 +3,6 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import { theme } from '$lib/stores/theme';
-	import { onMount } from 'svelte';
 
 	import '$lib/global.css';
 	import '$lib/themes.css';
@@ -11,21 +10,8 @@
 
 	let { children } = $props();
 
-	onMount(() => {
-		const storedTheme = localStorage.getItem('theme');
-		if (storedTheme) {
-			theme.set(storedTheme as 'light' | 'dark');
-		} else {
-			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-			theme.set(prefersDark ? 'dark' : 'light');
-		}
-	});
-
-	theme.subscribe((value) => {
-		if (typeof document !== 'undefined') {
-			document.documentElement.classList.toggle('dark', value === 'dark');
-			localStorage.setItem('theme', value);
-		}
+	$effect(() => {
+		document.documentElement.classList.toggle('dark', $theme === 'dark');
 	});
 </script>
 
@@ -37,6 +23,7 @@
 	<Header />
 
 	{@render children?.()}
+
 	<Footer>
 		<p>Contact me @ ...</p>
 	</Footer>
