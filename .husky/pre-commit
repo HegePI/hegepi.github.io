@@ -1,6 +1,5 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
 
-npm run format
+bun run format
 git add .
-npm run lint
+bun run lint
