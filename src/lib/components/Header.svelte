@@ -43,12 +43,8 @@
 	.homepage-title {
 		font-size: 2rem;
 		font-weight: bold;
-		color: #333;
 		letter-spacing: 1px;
 		margin: 0;
-		font-family:
-			'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
-			sans-serif;
 		padding: 0.5rem;
 	}
 

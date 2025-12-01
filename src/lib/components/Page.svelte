@@ -37,9 +37,6 @@
 	.homepage-page {
 		display: flex;
 		flex-direction: column;
-		font-family:
-			'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
-			sans-serif;
 		align-items: left;
 		margin: 0;
 	}
@@ -94,14 +91,6 @@
 		}
 	}
 
-	.homepage-page :global(h1) {
-		color: #333;
-	}
-
-	.homepage-page :global(p) {
-		color: #777;
-	}
-
 	.homepage-page :global(a) {
 		color: #007bff;
 		text-decoration: none;
@@ -112,7 +101,6 @@
 	}
 
 	.homepage-page :global(h2) {
-		color: #555;
 		margin-top: 30px;
 	}
 </style>

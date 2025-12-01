@@ -81,12 +81,10 @@
 	}
 
 	.current {
-		color: #333;
 		font-weight: 500;
 	}
 
 	.separator {
-		color: #999;
 		user-select: none;
 	}
 </style>
