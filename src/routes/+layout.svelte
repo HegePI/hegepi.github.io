@@ -1,15 +1,18 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { theme } from '$lib/stores/theme';
 	import favicon from '$lib/assets/favicon.svg';
-	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import { theme } from '$lib/stores/theme';
+	import { onMount } from 'svelte';
+
+	import '$lib/global.css';
+	import '$lib/themes.css';
+	import '$lib/variables.css';
 
 	let { children } = $props();
 
-	import '$lib/variables.css';
-	import '$lib/themes.css';
-	import '$lib/global.css';
+	// eslint-disable-next-line
+	export const prerender = true;
 
 	onMount(() => {
 		const storedTheme = localStorage.getItem('theme');
