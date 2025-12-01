@@ -7,7 +7,12 @@
 </script>
 
 <label class="switch">
-	<input type="checkbox" on:change={toggleDarkMode} checked={$theme === 'dark'} />
+	<input
+		type="checkbox"
+		on:change={toggleDarkMode}
+		checked={$theme === 'dark'}
+		id="dark-mode-switch"
+	/>
 	<span class="slider round"></span>
 </label>
 

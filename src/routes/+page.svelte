@@ -3,6 +3,13 @@
 	import Page from '$lib/components/Page.svelte';
 </script>
 
+<title>Home - My Portfolio</title>
+
+<meta
+	name="description"
+	content="Heikki Pullis portfolio. Here you can find information about my projects, education, and hobbies."
+/>
+
 <Page>
 	<article>
 		<section>

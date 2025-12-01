@@ -2,6 +2,13 @@
 	import Page from '$lib/components/Page.svelte';
 </script>
 
+<title>Hobbies - My Portfolio</title>
+
+<meta
+	name="description"
+	content="Heikki Pullis hobbies. Here you can find information about my personal interests and hobbies."
+/>
+
 <Page>
 	<h1>List of my hobbies</h1>
 
