@@ -18,6 +18,16 @@ const config = {
 		},
 		prerender: {
 			handleHttpError: 'warn'
+		},
+		csp: {
+			mode: 'auto',
+			directives: {
+				'default-src': ["'self'"],
+				'script-src': ["'self'"],
+				'style-src': ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],
+				'img-src': ["'self'", 'data:'],
+				'font-src': ["'self'", 'https://fonts.gstatic.com']
+			}
 		}
 	}
 };

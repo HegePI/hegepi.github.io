@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { theme } from '$lib/stores/theme';
+	import { themeState } from '$lib/stores/themeState.svelte';
 
 	function toggleDarkMode() {
-		theme.update((current) => (current === 'dark' ? 'light' : 'dark'));
+		themeState.theme = themeState.theme === 'dark' ? 'light' : 'dark';
 	}
 </script>
 
@@ -10,7 +10,7 @@
 	<input
 		type="checkbox"
 		on:change={toggleDarkMode}
-		checked={$theme === 'dark'}
+		checked={themeState.theme === 'dark'}
 		id="dark-mode-switch"
 	/>
 	<span class="slider round"></span>
