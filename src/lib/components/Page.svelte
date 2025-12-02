@@ -1,5 +1,5 @@
 <script>
-	import { theme } from '$lib/stores/theme';
+	import { themeState } from '$lib/stores/themeState.svelte';
 	import { fade } from 'svelte/transition';
 
 	/**
@@ -14,7 +14,7 @@
 </script>
 
 <main>
-	{#if $theme === 'light'}
+	{#if themeState.theme === 'light'}
 		<div class="homepage-left-column" transition:fade={{ duration: 1000 }}>
 			<img src={smilingEmoji} alt="Smiling emoji" class="light-theme-image" />
 		</div>
@@ -22,7 +22,7 @@
 	<div class="homepage-page">
 		{@render children?.()}
 	</div>
-	{#if $theme === 'dark'}
+	{#if themeState.theme === 'dark'}
 		<div class="homepage-right-column" transition:fade={{ duration: 1000 }}>
 			<img
 				src={smilingEmojiWithSunglasses}

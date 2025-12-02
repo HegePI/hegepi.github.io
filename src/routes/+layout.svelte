@@ -2,7 +2,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
-	import { theme } from '$lib/stores/theme';
+	import { themeState } from '$lib/stores/themeState.svelte';
 
 	import '$lib/global.css';
 	import '$lib/themes.css';
@@ -11,7 +11,7 @@
 	let { children } = $props();
 
 	$effect(() => {
-		document.documentElement.classList.toggle('dark', $theme === 'dark');
+		document.documentElement.classList.toggle('dark', themeState.theme === 'dark');
 	});
 </script>
 
@@ -19,7 +19,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<main class:dark={$theme === 'dark'}>
+<main class:dark={themeState.theme === 'dark'}>
 	<Header />
 
 	{@render children?.()}
