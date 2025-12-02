@@ -1,6 +1,5 @@
 <script>
 	import { themeState } from '$lib/stores/themeState.svelte';
-	import { fade } from 'svelte/transition';
 
 	/**
 	 * @typedef {Object} Props
@@ -15,7 +14,7 @@
 
 <main>
 	{#if themeState.theme === 'light'}
-		<div class="homepage-left-column" transition:fade={{ duration: 1000 }}>
+		<div class="homepage-left-column fade-in">
 			<img src={smilingEmoji} alt="Smiling emoji" class="light-theme-image" />
 		</div>
 	{/if}
@@ -23,7 +22,7 @@
 		{@render children?.()}
 	</div>
 	{#if themeState.theme === 'dark'}
-		<div class="homepage-right-column" transition:fade={{ duration: 1000 }}>
+		<div class="homepage-right-column fade-in">
 			<img
 				src={smilingEmojiWithSunglasses}
 				alt="Smiling emoji with sunglasses"
@@ -34,6 +33,19 @@
 </main>
 
 <style>
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.fade-in {
+		animation: fade-in 1s ease-in-out;
+	}
+
 	.homepage-page {
 		display: flex;
 		flex-direction: column;

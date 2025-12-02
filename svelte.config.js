@@ -19,6 +19,32 @@ const config = {
 		},
 		prerender: {
 			handleHttpError: 'warn'
+		},
+		csp: {
+			mode: 'auto',
+			directives: {
+				'default-src': ['self'],
+				'script-src': ['self'],
+				'style-src': ['self', 'https://fonts.googleapis.com'],
+				// work around for https://github.com/sveltejs/kit/issues/11623
+				'style-src-attr': [
+					'self',
+					'unsafe-hashes',
+					"'sha256-S8qMpvofolR8Mpjy4kQvEm7m1q8clzU4dfDH0AmvZjo='"
+				],
+				'img-src': ['self', 'data:'],
+				'font-src': ['self', 'https://fonts.gstatic.com'],
+				'connect-src': ['self'],
+				'media-src': ['self'],
+				'object-src': ['none'],
+				'frame-src': ['none'],
+				'base-uri': ['self'],
+				'form-action': ['self'],
+				'frame-ancestors': ['none'],
+				'manifest-src': ['self']
+				// 'require-trusted-types-for': ['script']
+				// 'trusted-types': ['sveltekit']
+			}
 		}
 	}
 };

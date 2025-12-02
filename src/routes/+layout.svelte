@@ -8,6 +8,8 @@
 	import '$lib/themes.css';
 	import '$lib/variables.css';
 
+	import '../app.css';
+
 	let { children } = $props();
 
 	$effect(() => {
