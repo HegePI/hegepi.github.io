@@ -41,8 +41,8 @@ const config = {
 				'base-uri': ['self'],
 				'form-action': ['self'],
 				'frame-ancestors': ['none'],
-				'manifest-src': ['self']
-				// 'require-trusted-types-for': ['script']
+				'manifest-src': ['self'],
+				'require-trusted-types-for': ['script']
 				// 'trusted-types': ['sveltekit']
 			}
 		}
