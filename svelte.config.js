@@ -24,7 +24,7 @@ const config = {
 			mode: 'auto',
 			directives: {
 				'default-src': ['self'],
-				'script-src': ['self'],
+				'script-src': ['self', 'unsafe-inline'],
 				'style-src': ['self', 'https://fonts.googleapis.com'],
 				// work around for https://github.com/sveltejs/kit/issues/11623
 				'style-src-attr': [
