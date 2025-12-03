@@ -30,7 +30,8 @@ jobs:
 
       - name: Build
         env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
+          BASE_PATH: '/'
+          # BASE_PATH: '/${{ github.event.repository.name }}'
         run: bun run build
 
       - name: Setup Pages
