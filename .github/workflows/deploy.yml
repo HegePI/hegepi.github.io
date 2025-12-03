@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         env:
-          BASE_PATH: '/'
+          BASE_PATH: ''
           # BASE_PATH: '/${{ github.event.repository.name }}'
         run: bun run build
 
