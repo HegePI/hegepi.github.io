@@ -33,6 +33,11 @@
 		</section>
 
 		<section>
+			<h2><a href={resolve('/resume')}>Resume</a></h2>
+			<p>In the resume page is my up-to-date resume.</p>
+		</section>
+
+		<section>
 			<h2><a href={resolve('/hobbies')}>Hobbies</a></h2>
 			<p>In the hobbies page are listed some of my hobbies.</p>
 		</section>
