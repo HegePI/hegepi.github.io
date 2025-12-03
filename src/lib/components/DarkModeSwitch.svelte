@@ -9,7 +9,7 @@
 <label class="switch">
 	<input
 		type="checkbox"
-		on:change={toggleDarkMode}
+		on:click={toggleDarkMode}
 		checked={themeState.theme === 'dark'}
 		id="dark-mode-switch"
 	/>
@@ -25,9 +25,16 @@
 	}
 
 	.switch input {
+		/* make the invisible checkbox cover the whole label so taps hit it on mobile */
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 		opacity: 0;
-		width: 0;
-		height: 0;
+		margin: 0;
+		padding: 0;
+		cursor: pointer;
 	}
 
 	.slider {
