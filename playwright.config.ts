@@ -6,5 +6,10 @@ export default defineConfig({
 		port: 4173,
 		reuseExistingServer: true
 	},
-	testDir: 'e2e'
+	testDir: 'e2e',
+	retries: process.env.CI ? 2 : 0,
+	use: {
+		trace: 'on-first-retry'
+	},
+	reporter: 'html'
 });
