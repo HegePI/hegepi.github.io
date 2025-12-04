@@ -3,6 +3,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import { themeState } from '$lib/stores/themeState.svelte';
+	import Page from '$lib/components/Page.svelte';
 
 	import '$lib/global.css';
 	import '$lib/themes.css';
@@ -24,7 +25,9 @@
 <main class:dark={themeState.theme === 'dark'}>
 	<Header />
 
-	{@render children?.()}
+	<Page>
+		{@render children?.()}
+	</Page>
 
 	<Footer>
 		<p>Contact me @ ...</p>

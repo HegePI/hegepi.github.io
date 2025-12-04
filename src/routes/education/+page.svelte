@@ -1,7 +1,3 @@
-<script lang="ts">
-	import Page from '$lib/components/Page.svelte';
-</script>
-
 <title>Education - My Portfolio</title>
 
 <meta
@@ -9,8 +5,6 @@
 	content="Heikki Pullis education. Here you can find information about my educational background and achievements."
 />
 
-<Page>
-	<h1>Education</h1>
+<h1>Education</h1>
 
-	<p>Masters degree in computer science</p>
-</Page>
+<p>Masters degree in computer science</p>
