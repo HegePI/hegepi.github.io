@@ -12,6 +12,7 @@
 		on:click={toggleDarkMode}
 		checked={themeState.theme === 'dark'}
 		id="dark-mode-switch"
+		aria-label="dark mode switch"
 	/>
 	<span class="slider round"></span>
 </label>

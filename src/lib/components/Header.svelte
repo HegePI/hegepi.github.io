@@ -3,19 +3,17 @@
 	import Breadcrumbs from './Breadcrumbs.svelte';
 </script>
 
-<main>
-	<header class="homepage-header">
-		<div class="header-top">
-			<div class="homepage-title">Homepage</div>
-			<div class="switch-slot"><DarkModeSwitch /></div>
+<header class="homepage-header">
+	<div class="header-top">
+		<div class="homepage-title">Homepage</div>
+		<div class="switch-slot"><DarkModeSwitch /></div>
+	</div>
+	<div class="header-bottom">
+		<div class="breadcrumbs-row">
+			<Breadcrumbs />
 		</div>
-		<div class="header-bottom">
-			<div class="breadcrumbs-row">
-				<Breadcrumbs />
-			</div>
-		</div>
-	</header>
-</main>
+	</div>
+</header>
 
 <style>
 	.homepage-header {

@@ -6,11 +6,9 @@
 	let { children }: Props = $props();
 </script>
 
-<main>
-	<div class="homepage-footer">
-		{@render children?.()}
-	</div>
-</main>
+<div class="homepage-footer">
+	{@render children?.()}
+</div>
 
 <style>
 	.homepage-footer {
