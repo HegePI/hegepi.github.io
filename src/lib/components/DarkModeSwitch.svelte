@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { themeState } from '$lib/stores/themeState.svelte';
 
+	import moon from '$lib/assets/moon.svg';
+	import sun from '$lib/assets/sun.svg';
+
 	function toggleDarkMode() {
 		themeState.theme = themeState.theme === 'dark' ? 'light' : 'dark';
 	}
@@ -14,7 +17,12 @@
 		id="dark-mode-switch"
 		aria-label="dark mode switch"
 	/>
-	<span class="slider round"></span>
+	<span class="slider round">
+		<span class="knob">
+			<img class="icon sun" src={sun} alt="Sun icon" />
+			<img class="icon moon" src={moon} alt="Moon icon" /></span
+		>
+	</span>
 </label>
 
 <style>
@@ -25,63 +33,76 @@
 		height: 34px;
 	}
 
+	/* Invisible checkbox */
 	.switch input {
-		/* make the invisible checkbox cover the whole label so taps hit it on mobile */
 		position: absolute;
-		top: 0;
-		left: 0;
+		inset: 0;
 		width: 100%;
 		height: 100%;
 		opacity: 0;
-		margin: 0;
-		padding: 0;
 		cursor: pointer;
 	}
 
+	/* Track */
 	.slider {
 		position: absolute;
-		cursor: pointer;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		inset: 0;
 		background-color: #ccc;
-		-webkit-transition: 0.4s;
 		transition: 0.4s;
+		border-radius: 34px;
 	}
 
-	.slider:before {
+	/* Knob (moved from :before to custom element so we can place icons inside it) */
+	.knob {
 		position: absolute;
-		content: '';
-		height: 26px;
 		width: 26px;
+		height: 26px;
 		left: 4px;
-		bottom: 4px;
-		background-color: white;
-		-webkit-transition: 0.4s;
-		transition: 0.4s;
+		top: 4px;
+		background: white;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		transition: transform 0.4s ease;
 	}
 
+	/* When the switch is ON, move the knob */
+	input:checked + .slider .knob {
+		transform: translateX(26px);
+	}
+
+	/* Track highlight on ON */
 	input:checked + .slider {
 		background-color: #2196f3;
 	}
 
-	input:focus + .slider {
-		box-shadow: 0 0 1px #2196f3;
+	/* Icons inside the knob */
+	.icon {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		transition: opacity 0.3s ease;
+		pointer-events: none;
 	}
 
-	input:checked + .slider:before {
-		-webkit-transform: translateX(26px);
-		-ms-transform: translateX(26px);
-		transform: translateX(26px);
+	/* Sun visible when off */
+	.sun {
+		opacity: 1;
 	}
 
-	/* Rounded sliders */
-	.slider.round {
-		border-radius: 34px;
+	/* Moon hidden when off */
+	.moon {
+		opacity: 0;
 	}
 
-	.slider.round:before {
-		border-radius: 50%;
+	/* Toggle visibility on checked */
+	input:checked + .slider .sun {
+		opacity: 0;
+	}
+
+	input:checked + .slider .moon {
+		opacity: 1;
 	}
 </style>
