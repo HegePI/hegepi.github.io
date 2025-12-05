@@ -25,24 +25,5 @@
 			margin-left: 25%;
 			margin-right: 25%;
 		}
-
-		.homepage-left-column,
-		.homepage-right-column {
-			display: flex;
-			position: fixed;
-			top: 100px; /* Adjust this value based on header height */
-			bottom: 50px; /* Adjust this value based on footer height */
-			width: 25%;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.homepage-left-column {
-			left: 0;
-		}
-
-		.homepage-right-column {
-			right: 0;
-		}
 	}
 </style>
